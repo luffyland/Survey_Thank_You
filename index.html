@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .thank-you {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .cta-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you">Thank you for completing the survey!</div>
+    <button class="cta-button" onclick="window.location.href='https://example.com'">Visit Our Website</button>
+    <script>
+        function createConfetti() {
+            const confettiCount = 100;
+            for (let i = 0; i < confettiCount; i++) {
+                let confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = Math.random() * window.innerHeight + 'px';
+                confetti.style.width = '8px';
+                confetti.style.height = '8px';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.opacity = Math.random();
+                confetti.style.transition = 'top 3s ease-out';
+                document.body.appendChild(confetti);
+                setTimeout(() => {
+                    confetti.style.top = window.innerHeight + 'px';
+                    setTimeout(() => confetti.remove(), 3000);
+                }, 100);
+            }
+        }
+        createConfetti();
+    </script>
+</body>
+</html>
